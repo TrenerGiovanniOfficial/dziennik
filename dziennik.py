@@ -20,6 +20,13 @@ class Dziennik:
         s = Student(imie, nazwisko, id)
         self._uczniowie.append(s)
 
-    def _generuj_id(self):
-        ...
+    def pobierz_studenta(self, id: int) -> Student:
+        for uczen in self._uczniowie:
+            if uczen.id == id:
+                return uczen
+
+    def _generuj_id(self) -> int:
+        nowy_id = len(self._uczniowie) + 1
+        print(nowy_id)
+        return nowy_id
 
